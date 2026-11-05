@@ -1,0 +1,30 @@
+COMMERCIAL INVOICE
+
+Invoice No: SKW/EXP/2026/0418
+Invoice Date: 02/10/2026
+Exporter: Sunrise Knitwear Pvt. Ltd.
+Exporter Address: 14 Kumaran Road, Tirupur 641601, Tamil Nadu, India
+IEC: AABCS1234K
+GSTIN: 33AABCS1234K1Z
+Consignee: Northfield Apparel Ltd
+Consignee Address: 22 Mill Street, Manchester M4 6BE
+Consignee Country: United Kingdom
+Port of Loading: Tuticorin, India
+Port of Discharge: Felixstowe, UK
+Country of Origin: India
+Final Destination: United Kingdom
+Terms of Delivery: FOB Tuticorin
+Currency: USD
+L/C No: LC-NFA-77821
+
+| Description | HS Code | Qty | Unit | Unit Price | Amount |
+|---|---|---|---|---|---|
+| Men's 100% cotton knitted crew-neck T-shirts | 61091000 | 6000 | PCS | 3.20 | 19200.00 |
+| Boys' 100% cotton knitted T-shirts | 61091000 | 4000 | PCS | 2.40 | 9800.00 |
+| Men's 100% cotton woven casual shirts | 61051000 | 1500 | PCS | 6.50 | 9750.00 |
+
+Total Quantity: 11500 PCS
+Total Value: USD 38750.00
+Number of Packages: 230 cartons
+Gross Weight: 3450 kg
+Net Weight: 3105 kg

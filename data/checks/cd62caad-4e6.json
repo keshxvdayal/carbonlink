@@ -1,0 +1,642 @@
+{
+  "id": "cd62caad-4e6",
+  "name": "Sample: shipment with errors",
+  "createdAt": "2026-11-04T15:21:56.412Z",
+  "docs": [
+    {
+      "id": "64208651",
+      "fileName": "01-commercial-invoice.txt",
+      "extractedBy": "heuristic",
+      "data": {
+        "docType": "commercial_invoice",
+        "documentNumber": "SKW/EXP/2026/0418",
+        "documentDate": "2026-10-02",
+        "invoiceNumberRef": "SKW/EXP/2026/0418",
+        "exporter": {
+          "name": "Sunrise Knitwear Pvt. Ltd.",
+          "address": "14 Kumaran Road, Tirupur 641601, Tamil Nadu, India",
+          "country": null
+        },
+        "consignee": {
+          "name": "Northfield Apparel Ltd",
+          "address": "22 Mill Street, Manchester M4 6BE",
+          "country": "United Kingdom"
+        },
+        "exporterIec": "AABCS1234K",
+        "exporterGstin": "33AABCS1234K1Z",
+        "portOfLoading": "Tuticorin, India",
+        "portOfDischarge": "Felixstowe, UK",
+        "countryOfOrigin": "India",
+        "finalDestination": "United Kingdom",
+        "incoterms": "FOB Tuticorin",
+        "currency": "USD",
+        "totalValue": 38750,
+        "totalQuantity": 11500,
+        "quantityUnit": "PCS",
+        "numberOfPackages": 230,
+        "grossWeightKg": 3450,
+        "netWeightKg": 3105,
+        "vesselOrFlight": null,
+        "blNumber": null,
+        "containerNumbers": [],
+        "lcNumber": "LC-NFA-77821",
+        "latestShipmentDate": null,
+        "lcExpiryDate": null,
+        "lineItems": [
+          {
+            "description": "Men's 100% cotton knitted crew-neck T-shirts",
+            "hsCode": "61091000",
+            "quantity": 6000,
+            "unit": "PCS",
+            "unitPrice": 3.2,
+            "amount": 19200
+          },
+          {
+            "description": "Boys' 100% cotton knitted T-shirts",
+            "hsCode": "61091000",
+            "quantity": 4000,
+            "unit": "PCS",
+            "unitPrice": 2.4,
+            "amount": 9800
+          },
+          {
+            "description": "Men's 100% cotton woven casual shirts",
+            "hsCode": "61051000",
+            "quantity": 1500,
+            "unit": "PCS",
+            "unitPrice": 6.5,
+            "amount": 9750
+          }
+        ],
+        "lowConfidenceFields": []
+      }
+    },
+    {
+      "id": "6a398273",
+      "fileName": "02-packing-list.txt",
+      "extractedBy": "heuristic",
+      "data": {
+        "docType": "packing_list",
+        "documentNumber": "SKW/PL/2026/0418",
+        "documentDate": "2026-10-02",
+        "invoiceNumberRef": "SKW/EXP/2026/0418",
+        "exporter": {
+          "name": "Sunrise Knitwear Pvt. Ltd.",
+          "address": null,
+          "country": null
+        },
+        "consignee": {
+          "name": "Northfield Apparels (UK) Limited",
+          "address": null,
+          "country": null
+        },
+        "exporterIec": null,
+        "exporterGstin": null,
+        "portOfLoading": "Tuticorin, India",
+        "portOfDischarge": "Felixstowe, UK",
+        "countryOfOrigin": null,
+        "finalDestination": null,
+        "incoterms": null,
+        "currency": null,
+        "totalValue": null,
+        "totalQuantity": 11500,
+        "quantityUnit": "PCS",
+        "numberOfPackages": 232,
+        "grossWeightKg": 3540,
+        "netWeightKg": 3105,
+        "vesselOrFlight": null,
+        "blNumber": null,
+        "containerNumbers": [
+          "SKWU4182737"
+        ],
+        "lcNumber": null,
+        "latestShipmentDate": null,
+        "lcExpiryDate": null,
+        "lineItems": [
+          {
+            "description": "Men's 100% cotton knitted crew-neck T-shirts",
+            "hsCode": "61099000",
+            "quantity": 6000,
+            "unit": "PCS",
+            "unitPrice": null,
+            "amount": null
+          },
+          {
+            "description": "Boys' 100% cotton knitted T-shirts",
+            "hsCode": "61091000",
+            "quantity": 4000,
+            "unit": "PCS",
+            "unitPrice": null,
+            "amount": null
+          },
+          {
+            "description": "Men's 100% cotton woven casual shirts",
+            "hsCode": "62052000",
+            "quantity": 1500,
+            "unit": "PCS",
+            "unitPrice": null,
+            "amount": null
+          }
+        ],
+        "lowConfidenceFields": []
+      }
+    },
+    {
+      "id": "da676fc5",
+      "fileName": "03-bill-of-lading.txt",
+      "extractedBy": "heuristic",
+      "data": {
+        "docType": "bill_of_lading",
+        "documentNumber": null,
+        "documentDate": "2026-10-18",
+        "invoiceNumberRef": "SKW/EXP/2026/0418",
+        "exporter": {
+          "name": "Sunrise Knitwear Pvt. Ltd.",
+          "address": null,
+          "country": null
+        },
+        "consignee": {
+          "name": "Northfield Apparel Ltd",
+          "address": null,
+          "country": null
+        },
+        "exporterIec": null,
+        "exporterGstin": null,
+        "portOfLoading": "Tuticorin, India",
+        "portOfDischarge": "Southampton, UK",
+        "countryOfOrigin": null,
+        "finalDestination": null,
+        "incoterms": null,
+        "currency": null,
+        "totalValue": null,
+        "totalQuantity": null,
+        "quantityUnit": null,
+        "numberOfPackages": 230,
+        "grossWeightKg": 3450,
+        "netWeightKg": null,
+        "vesselOrFlight": "MV OCEAN VERITY 614W",
+        "blNumber": "OVL-TUT-884512",
+        "containerNumbers": [
+          "SKWU4182735"
+        ],
+        "lcNumber": null,
+        "latestShipmentDate": null,
+        "lcExpiryDate": null,
+        "lineItems": [],
+        "lowConfidenceFields": []
+      }
+    },
+    {
+      "id": "99b69196",
+      "fileName": "04-certificate-of-origin.txt",
+      "extractedBy": "heuristic",
+      "data": {
+        "docType": "certificate_of_origin",
+        "documentNumber": "COO/TPR/2026/55120",
+        "documentDate": "2026-10-20",
+        "invoiceNumberRef": "SKW/EXP/2026/0418",
+        "exporter": {
+          "name": "Sunrise Knitwear Pvt. Ltd.",
+          "address": null,
+          "country": null
+        },
+        "consignee": {
+          "name": "Northfield Apparel Ltd",
+          "address": null,
+          "country": null
+        },
+        "exporterIec": null,
+        "exporterGstin": null,
+        "portOfLoading": "Tuticorin, India",
+        "portOfDischarge": "Felixstowe, UK",
+        "countryOfOrigin": "India",
+        "finalDestination": null,
+        "incoterms": null,
+        "currency": null,
+        "totalValue": null,
+        "totalQuantity": 11500,
+        "quantityUnit": "PCS",
+        "numberOfPackages": 230,
+        "grossWeightKg": 3450,
+        "netWeightKg": null,
+        "vesselOrFlight": null,
+        "blNumber": null,
+        "containerNumbers": [],
+        "lcNumber": null,
+        "latestShipmentDate": null,
+        "lcExpiryDate": null,
+        "lineItems": [],
+        "lowConfidenceFields": []
+      }
+    },
+    {
+      "id": "a2101fb4",
+      "fileName": "05-letter-of-credit.txt",
+      "extractedBy": "heuristic",
+      "data": {
+        "docType": "letter_of_credit",
+        "documentNumber": "LC-NFA-77821",
+        "documentDate": "2026-09-12",
+        "invoiceNumberRef": null,
+        "exporter": {
+          "name": "Sunrise Knitwear Pvt. Ltd.",
+          "address": null,
+          "country": null
+        },
+        "consignee": {
+          "name": "Northfield Apparel Ltd",
+          "address": null,
+          "country": null
+        },
+        "exporterIec": null,
+        "exporterGstin": null,
+        "portOfLoading": "Tuticorin, India",
+        "portOfDischarge": "Felixstowe, UK",
+        "countryOfOrigin": null,
+        "finalDestination": null,
+        "incoterms": "FOB",
+        "currency": "USD",
+        "totalValue": 39000,
+        "totalQuantity": null,
+        "quantityUnit": null,
+        "numberOfPackages": null,
+        "grossWeightKg": null,
+        "netWeightKg": null,
+        "vesselOrFlight": null,
+        "blNumber": null,
+        "containerNumbers": [],
+        "lcNumber": "LC-NFA-77821",
+        "latestShipmentDate": "2026-10-15",
+        "lcExpiryDate": "2026-10-30",
+        "lineItems": [],
+        "lowConfidenceFields": []
+      }
+    }
+  ],
+  "findings": [
+    {
+      "ruleId": "XDC-001",
+      "severity": "critical",
+      "category": "consistency",
+      "title": "Consignee differs between documents",
+      "detail": "Commercial Invoice says \"Northfield Apparel Ltd\"; Packing List says \"Northfield Apparels (UK) Limited\".",
+      "fix": "Use the consignee name exactly as on the purchase order / L/C on every document.",
+      "evidence": [
+        {
+          "docId": "64208651",
+          "field": "Consignee",
+          "value": "Northfield Apparel Ltd"
+        },
+        {
+          "docId": "6a398273",
+          "field": "Consignee",
+          "value": "Northfield Apparels (UK) Limited"
+        },
+        {
+          "docId": "da676fc5",
+          "field": "Consignee",
+          "value": "Northfield Apparel Ltd"
+        },
+        {
+          "docId": "99b69196",
+          "field": "Consignee",
+          "value": "Northfield Apparel Ltd"
+        }
+      ],
+      "id": "F004",
+      "status": "open"
+    },
+    {
+      "ruleId": "XDC-022",
+      "severity": "critical",
+      "category": "hs_code",
+      "title": "HS code for line 1 differs between documents",
+      "detail": "Commercial Invoice declares 61091000 for \"Men's 100% cotton knitted crew-neck T-shirts\"; Packing List shows 61099000.",
+      "fix": "Decide the correct classification and use the identical code on every document.",
+      "evidence": [
+        {
+          "docId": "64208651",
+          "field": "Line 1 HS",
+          "value": "61091000"
+        },
+        {
+          "docId": "6a398273",
+          "field": "Line 1 HS",
+          "value": "61099000"
+        }
+      ],
+      "id": "F009",
+      "status": "open"
+    },
+    {
+      "ruleId": "XDC-022",
+      "severity": "critical",
+      "category": "hs_code",
+      "title": "HS code for line 3 differs between documents",
+      "detail": "Commercial Invoice declares 61051000 for \"Men's 100% cotton woven casual shirts\"; Packing List shows 62052000.",
+      "fix": "Decide the correct classification and use the identical code on every document.",
+      "evidence": [
+        {
+          "docId": "64208651",
+          "field": "Line 3 HS",
+          "value": "61051000"
+        },
+        {
+          "docId": "6a398273",
+          "field": "Line 3 HS",
+          "value": "62052000"
+        }
+      ],
+      "id": "F010",
+      "status": "open"
+    },
+    {
+      "ruleId": "LC-001",
+      "severity": "critical",
+      "category": "letter_of_credit",
+      "title": "Shipment is later than the L/C latest shipment date",
+      "detail": "B/L on-board 2026-10-18; L/C allows shipment until 2026-10-15. The bank will treat this as a discrepancy.",
+      "fix": "Obtain an L/C amendment extending the shipment date before presenting documents.",
+      "evidence": [
+        {
+          "docId": "da676fc5",
+          "field": "On-board date",
+          "value": "2026-10-18"
+        },
+        {
+          "docId": "a2101fb4",
+          "field": "Latest shipment",
+          "value": "2026-10-15"
+        }
+      ],
+      "id": "F012",
+      "status": "open"
+    },
+    {
+      "ruleId": "LC-007",
+      "severity": "critical",
+      "category": "letter_of_credit",
+      "title": "B/L port of discharge doesn't match the L/C",
+      "detail": "L/C: \"Felixstowe, UK\"; B/L: \"Southampton, UK\".",
+      "fix": "Ship per the credit terms or get an amendment.",
+      "evidence": [
+        {
+          "docId": "a2101fb4",
+          "field": "Port of discharge",
+          "value": "Felixstowe, UK"
+        },
+        {
+          "docId": "da676fc5",
+          "field": "Port of discharge",
+          "value": "Southampton, UK"
+        }
+      ],
+      "id": "F013",
+      "status": "open"
+    },
+    {
+      "ruleId": "FMT-002",
+      "severity": "major",
+      "category": "format",
+      "title": "GSTIN has an invalid format",
+      "detail": "\"33AABCS1234K1Z\" on Commercial Invoice does not match the 15-character GSTIN pattern.",
+      "fix": "Copy the GSTIN exactly from the GST registration certificate.",
+      "evidence": [
+        {
+          "docId": "64208651",
+          "field": "GSTIN",
+          "value": "33AABCS1234K1Z"
+        }
+      ],
+      "id": "F001",
+      "status": "open"
+    },
+    {
+      "ruleId": "FMT-003",
+      "severity": "major",
+      "category": "format",
+      "title": "Container number SKWU4182735 fails the ISO 6346 check digit",
+      "detail": "The last digit of SKWU4182735 on Bill of Lading does not match the computed check digit, which usually means a typo.",
+      "fix": "Re-check the container number against the container itself or the carrier's booking confirmation.",
+      "evidence": [
+        {
+          "docId": "da676fc5",
+          "field": "Container",
+          "value": "SKWU4182735"
+        }
+      ],
+      "id": "F002",
+      "status": "open"
+    },
+    {
+      "ruleId": "ARI-001",
+      "severity": "major",
+      "category": "arithmetic",
+      "title": "Line 2 amount doesn't equal quantity × unit price",
+      "detail": "4000 × 2.4 = 9600.00, but the invoice shows 9800.",
+      "fix": "Recalculate the line amount.",
+      "evidence": [
+        {
+          "docId": "64208651",
+          "field": "Line 2 amount",
+          "value": "9800"
+        }
+      ],
+      "id": "F003",
+      "status": "open"
+    },
+    {
+      "ruleId": "XDC-004",
+      "severity": "major",
+      "category": "consistency",
+      "title": "Port of discharge differs between documents",
+      "detail": "Commercial Invoice says \"Felixstowe, UK\"; Bill of Lading says \"Southampton, UK\".",
+      "fix": "Align the port of discharge with the carrier booking.",
+      "evidence": [
+        {
+          "docId": "64208651",
+          "field": "Port of discharge",
+          "value": "Felixstowe, UK"
+        },
+        {
+          "docId": "6a398273",
+          "field": "Port of discharge",
+          "value": "Felixstowe, UK"
+        },
+        {
+          "docId": "da676fc5",
+          "field": "Port of discharge",
+          "value": "Southampton, UK"
+        },
+        {
+          "docId": "99b69196",
+          "field": "Port of discharge",
+          "value": "Felixstowe, UK"
+        }
+      ],
+      "id": "F005",
+      "status": "open"
+    },
+    {
+      "ruleId": "XDC-009",
+      "severity": "major",
+      "category": "consistency",
+      "title": "Number of packages differs between documents",
+      "detail": "Commercial Invoice says \"230\"; Packing List says \"232\".",
+      "fix": "Align the package/carton count with the physical stuffing tally.",
+      "evidence": [
+        {
+          "docId": "64208651",
+          "field": "Number of packages",
+          "value": "230"
+        },
+        {
+          "docId": "6a398273",
+          "field": "Number of packages",
+          "value": "232"
+        },
+        {
+          "docId": "da676fc5",
+          "field": "Number of packages",
+          "value": "230"
+        },
+        {
+          "docId": "99b69196",
+          "field": "Number of packages",
+          "value": "230"
+        }
+      ],
+      "id": "F006",
+      "status": "open"
+    },
+    {
+      "ruleId": "XDC-010",
+      "severity": "major",
+      "category": "consistency",
+      "title": "Gross weight (kg) differs between documents",
+      "detail": "Commercial Invoice says \"3450\"; Packing List says \"3540\".",
+      "fix": "Use the weighbridge gross weight on every document.",
+      "evidence": [
+        {
+          "docId": "64208651",
+          "field": "Gross weight (kg)",
+          "value": "3450"
+        },
+        {
+          "docId": "6a398273",
+          "field": "Gross weight (kg)",
+          "value": "3540"
+        },
+        {
+          "docId": "da676fc5",
+          "field": "Gross weight (kg)",
+          "value": "3450"
+        },
+        {
+          "docId": "99b69196",
+          "field": "Gross weight (kg)",
+          "value": "3450"
+        }
+      ],
+      "id": "F007",
+      "status": "open"
+    },
+    {
+      "ruleId": "XDC-021",
+      "severity": "major",
+      "category": "consistency",
+      "title": "Container numbers differ between documents",
+      "detail": "Packing List: SKWU4182737; Bill of Lading: SKWU4182735",
+      "fix": "Use the container numbers from the stuffing report / carrier on every document.",
+      "evidence": [
+        {
+          "docId": "6a398273",
+          "field": "Containers",
+          "value": "SKWU4182737"
+        },
+        {
+          "docId": "da676fc5",
+          "field": "Containers",
+          "value": "SKWU4182735"
+        }
+      ],
+      "id": "F008",
+      "status": "open"
+    },
+    {
+      "ruleId": "DAT-002",
+      "severity": "minor",
+      "category": "dates",
+      "title": "Certificate of origin is dated after shipment",
+      "detail": "COO 2026-10-20 vs B/L on-board 2026-10-18. Some importing countries only accept this as a 'retrospectively issued' certificate.",
+      "fix": "Check the importing country's rules; apply for the COO before shipment where possible.",
+      "evidence": [
+        {
+          "docId": "99b69196",
+          "field": "Date",
+          "value": "2026-10-20"
+        },
+        {
+          "docId": "da676fc5",
+          "field": "On-board date",
+          "value": "2026-10-18"
+        }
+      ],
+      "id": "F011",
+      "status": "open"
+    },
+    {
+      "ruleId": "HS-010",
+      "severity": "minor",
+      "category": "hs_code",
+      "title": "Declared HS 61051000 may be wrong for \"Men's 100% cotton woven casual shirts\"",
+      "detail": "Suggested 620520 (Men's or boys' shirts, not knitted (woven), of cotton). Keyword match against the offline reference table (6-digit level). Confirm against the ITC-HS schedule.",
+      "fix": "Confirm the classification. A wrong HS code changes duty, incentive eligibility and can trigger a customs query.",
+      "id": "F014",
+      "status": "open"
+    }
+  ],
+  "hsSuggestions": [
+    {
+      "description": "Men's 100% cotton knitted crew-neck T-shirts",
+      "declared": "61091000",
+      "suggested": "610910",
+      "suggestedDescription": "T-shirts, singlets and other vests, knitted or crocheted, of cotton",
+      "confidence": "medium",
+      "source": "reference_table",
+      "rationale": "Keyword match against the offline reference table (6-digit level). Confirm against the ITC-HS schedule.",
+      "matchesDeclared": true
+    },
+    {
+      "description": "Boys' 100% cotton knitted T-shirts",
+      "declared": "61091000",
+      "suggested": "610910",
+      "suggestedDescription": "T-shirts, singlets and other vests, knitted or crocheted, of cotton",
+      "confidence": "medium",
+      "source": "reference_table",
+      "rationale": "Keyword match against the offline reference table (6-digit level). Confirm against the ITC-HS schedule.",
+      "matchesDeclared": true
+    },
+    {
+      "description": "Men's 100% cotton woven casual shirts",
+      "declared": "61051000",
+      "suggested": "620520",
+      "suggestedDescription": "Men's or boys' shirts, not knitted (woven), of cotton",
+      "confidence": "medium",
+      "source": "reference_table",
+      "rationale": "Keyword match against the offline reference table (6-digit level). Confirm against the ITC-HS schedule.",
+      "matchesDeclared": false
+    }
+  ],
+  "mode": "offline",
+  "audit": [
+    {
+      "at": "2026-11-04T15:21:56.412Z",
+      "action": "check_created",
+      "detail": "5 document(s), 14 finding(s), offline extraction"
+    }
+  ],
+  "riskScore": 100,
+  "riskLevel": "high",
+  "status": "issues_found"
+}

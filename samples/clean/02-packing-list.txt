@@ -1,0 +1,21 @@
+PACKING LIST
+
+Packing List No: SKW/PL/2026/0418
+Date: 02/10/2026
+Invoice Ref: SKW/EXP/2026/0418
+Exporter: Sunrise Knitwear Pvt. Ltd.
+Consignee: Northfield Apparel Ltd
+Port of Loading: Tuticorin, India
+Port of Discharge: Felixstowe, UK
+
+| Description | HS Code | Qty | Unit |
+|---|---|---|---|
+| Men's 100% cotton knitted crew-neck T-shirts | 61091000 | 6000 | PCS |
+| Boys' 100% cotton knitted T-shirts | 61091000 | 4000 | PCS |
+| Men's 100% cotton woven casual shirts | 62052000 | 1500 | PCS |
+
+Total Quantity: 11500 PCS
+Number of Packages: 230 cartons
+Gross Weight: 3450 kg
+Net Weight: 3105 kg
+Container No: SKWU4182737
