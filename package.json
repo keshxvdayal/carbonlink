@@ -1,5 +1,5 @@
 {
-  "name": "tradecheck",
+  "name": "carbonlink",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "CARBONLINK_DATA_DIR=.test-data tsx --test tests/*.test.ts",
+    "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.4.0",
+    "exceljs": "^4.4.0",
     "lucide-react": "^1.68.0",
     "next": "16.4.5",
     "pdf-parse": "^2.4.5",

@@ -1,12 +1,9 @@
-import { randomUUID } from "crypto";
-import { aiEnabled, classifyHsWithClaude, extractWithClaude, type UploadedFile } from "@/lib/extract/claude";
+import { aiEnabled, extractWithClaude, type UploadedFile } from "@/lib/extract/claude";
 import { extractHeuristic } from "@/lib/extract/heuristic";
-import { hs6, lookupHs, suggestFromReference } from "@/lib/hs";
-import { runRules } from "@/lib/rules";
-import type { CheckResult, CheckStatus, Finding, HsSuggestion, Severity, SourceDoc } from "@/lib/types";
-
-const SEVERITY_WEIGHT: Record<Severity, number> = { critical: 30, major: 12, minor: 4, info: 0 };
-export const SEVERITY_ORDER: Severity[] = ["critical", "major", "minor", "info"];
+import { computeInstallation, productForRow, type PassportResolver } from "@/lib/calc";
+import { runFlags, scorecard, type Scorecard } from "@/lib/flags";
+import { newId, saveEvidenceFile } from "@/lib/store";
+import type { ActivityRow, Db, Evidence, ExtractedDoc, Flag, InstallationResult, Supplier } from "@/lib/types";
 
 async function pdfText(data: Buffer): Promise<string> {
   const { PDFParse } = await import("pdf-parse");
@@ -18,81 +15,68 @@ async function pdfText(data: Buffer): Promise<string> {
   }
 }
 
-async function extractOne(file: UploadedFile, useAi: boolean): Promise<SourceDoc> {
-  const id = randomUUID().slice(0, 8);
-  if (useAi) return { id, fileName: file.name, extractedBy: "claude", data: await extractWithClaude(file) };
-
+export async function extract(file: UploadedFile, opts: { forceOffline?: boolean } = {}): Promise<{ data: ExtractedDoc; by: Evidence["extractedBy"] }> {
+  if (aiEnabled() && !opts.forceOffline) return { data: await extractWithClaude(file), by: "claude" };
   let text: string;
   if (file.mimeType === "application/pdf") text = await pdfText(file.data);
-  else if (file.mimeType.startsWith("image/")) throw new Error(`${file.name}: images need AI mode. Set ANTHROPIC_API_KEY to read scans and photos.`);
-  else text = file.data.toString("utf8");
-  return { id, fileName: file.name, extractedBy: "heuristic", data: extractHeuristic(text) };
+  else if (file.mimeType.startsWith("text/")) text = file.data.toString("utf8");
+  else throw new Error(`${file.name}: scans and photos need AI mode. Set ANTHROPIC_API_KEY, or upload a text/PDF version.`);
+  return { data: extractHeuristic(text), by: "offline" };
 }
 
-async function buildHsSuggestions(docs: SourceDoc[], useAi: boolean): Promise<HsSuggestion[]> {
-  // Use the invoice's lines as the canonical item list; fall back to any doc with items.
-  const source = docs.find((d) => d.data.docType === "commercial_invoice" && d.data.lineItems.length) ?? docs.find((d) => d.data.lineItems.length);
-  if (!source) return [];
-  const items = source.data.lineItems.map((li) => ({ description: li.description, declared: li.hsCode }));
-
-  const ai = useAi ? await classifyHsWithClaude(items).catch(() => []) : [];
-  return items.map((it, i): HsSuggestion => {
-    const a = ai.find((s) => s.index === i);
-    if (a) {
-      const sugg = a.suggestedHs.replace(/\D/g, "");
-      return { description: it.description, declared: it.declared, suggested: sugg, suggestedDescription: a.suggestedDescription, confidence: a.confidence, source: "claude", rationale: a.rationale, matchesDeclared: it.declared ? hs6(it.declared) === hs6(sugg) : null };
-    }
-    const ref = suggestFromReference(it.description);
-    if (!ref) {
-      const known = it.declared ? lookupHs(it.declared) : undefined;
-      return { description: it.description, declared: it.declared, suggested: null, suggestedDescription: known?.description ?? null, confidence: "low", source: "reference_table", rationale: "No match in the offline reference table. Enable AI mode or classify manually.", matchesDeclared: null };
-    }
-    return { description: it.description, declared: it.declared, suggested: ref.entry.code, suggestedDescription: ref.entry.description, confidence: ref.score >= 7 ? "medium" : "low", source: "reference_table", rationale: "Keyword match against the offline reference table (6-digit level). Confirm against the ITC-HS schedule.", matchesDeclared: it.declared ? hs6(it.declared) === ref.entry.code : null };
+/** Turn one extracted document into evidence + activity rows on the supplier. */
+export function attachExtraction(s: Supplier, file: Omit<Evidence, "id" | "data" | "extractedBy">, data: ExtractedDoc, by: Evidence["extractedBy"]): { evidence: Evidence; rows: ActivityRow[] } {
+  const evidence: Evidence = { ...file, id: newId(), data, extractedBy: by };
+  const lowSet = data.lowConfidenceFields.map((f) => f.toLowerCase());
+  const rows: ActivityRow[] = data.lines.map((l) => {
+    const row: ActivityRow = {
+      id: newId(),
+      kind: l.kind,
+      fuel: l.kind === "fuel" ? l.fuel : null,
+      material: l.material,
+      productId: null,
+      quantity: l.quantity,
+      unit: l.unit,
+      periodStart: data.periodStart,
+      periodEnd: data.periodEnd ?? data.periodStart,
+      evidenceId: evidence.id,
+      sourceQuote: l.sourceQuote,
+      origin: by === "claude" ? "ai" : by === "offline" ? "offline" : "manual",
+      lowConfidence: lowSet.some((f) => f && ((l.material ?? "").toLowerCase().includes(f) || f.includes(l.kind) || (l.material && f.includes(l.material.toLowerCase())))),
+      confirmed: false,
+    };
+    if (row.kind === "production" || row.kind === "precursor") row.productId = productForRow(s, row);
+    return row;
   });
+  s.evidence.push(evidence);
+  s.activity.push(...rows);
+  return { evidence, rows };
 }
 
-function hsFindings(sugg: HsSuggestion[]): Omit<Finding, "id" | "status">[] {
-  return sugg
-    .filter((s) => s.matchesDeclared === false && s.confidence !== "low")
-    .map((s) => ({
-      ruleId: "HS-010",
-      severity: s.confidence === "high" ? ("major" as const) : ("minor" as const),
-      category: "hs_code" as const,
-      title: `Declared HS ${s.declared} may be wrong for "${s.description}"`,
-      detail: `Suggested ${s.suggested} (${s.suggestedDescription}). ${s.rationale}`,
-      fix: "Confirm the classification. A wrong HS code changes duty, incentive eligibility and can trigger a customs query.",
-    }));
+export async function ingest(s: Supplier, upload: UploadedFile, by: Evidence["uploadedBy"], opts: { forceOffline?: boolean } = {}) {
+  const sha = await saveEvidenceFile(upload.data);
+  const { data, by: extractedBy } = await extract(upload, opts);
+  return attachExtraction(s, { fileName: upload.name, mimeType: upload.mimeType, sha256: sha, size: upload.data.length, uploadedAt: new Date().toISOString(), uploadedBy: by }, data, extractedBy);
 }
 
-export function scoreAndStatus(findings: Finding[]): Pick<CheckResult, "riskScore" | "riskLevel" | "status"> {
-  const open = findings.filter((f) => f.status === "open");
-  const riskScore = Math.min(100, open.reduce((s, f) => s + SEVERITY_WEIGHT[f.severity], 0));
-  const riskLevel = riskScore >= 50 ? "high" : riskScore >= 20 ? "medium" : "low";
-  let status: CheckStatus = "clear";
-  if (open.some((f) => f.severity === "critical" || f.severity === "major")) status = "issues_found";
-  else if (open.length) status = "needs_review";
-  return { riskScore, riskLevel, status };
-}
+/* ------------------------------------------------------------------ *
+ * Results for one supplier (with multi-tier passport resolution)     *
+ * ------------------------------------------------------------------ */
+export type SupplierResult = { inst: InstallationResult; flags: Flag[]; score: Scorecard };
 
-export async function runCheck(name: string, files: UploadedFile[], opts: { forceOffline?: boolean } = {}): Promise<CheckResult> {
-  const useAi = aiEnabled() && !opts.forceOffline;
-  const docs = await Promise.all(files.map((f) => extractOne(f, useAi)));
-  const hsSuggestions = await buildHsSuggestions(docs, useAi);
-
-  const findings: Finding[] = [...runRules(docs), ...hsFindings(hsSuggestions)]
-    .map((f, i) => ({ ...f, id: `F${String(i + 1).padStart(3, "0")}`, status: "open" as const }))
-    .sort((a, b) => SEVERITY_ORDER.indexOf(a.severity) - SEVERITY_ORDER.indexOf(b.severity));
-
-  const now = new Date().toISOString();
-  return {
-    id: randomUUID().slice(0, 12),
-    name,
-    createdAt: now,
-    docs,
-    findings,
-    hsSuggestions,
-    mode: useAi ? "ai" : "offline",
-    audit: [{ at: now, action: "check_created", detail: `${docs.length} document(s), ${findings.length} finding(s), ${useAi ? "AI" : "offline"} extraction` }],
-    ...scoreAndStatus(findings),
+export function makeResolver(db: Db, depth = 0, seen = new Set<string>()): PassportResolver {
+  return (supplierId, productId) => {
+    if (depth > 4 || seen.has(supplierId)) return null; // guard against cycles
+    const up = db.suppliers.find((x) => x.id === supplierId);
+    if (!up) return null;
+    const inst = computeInstallation(up, db.settings, makeResolver(db, depth + 1, new Set([...seen, supplierId])));
+    const p = inst.products.find((x) => x.productId === productId);
+    return p && p.outputTonnes > 0 ? { seeDirect: p.seeDirect, seeIndirect: p.seeIndirect } : null;
   };
+}
+
+export function supplierResult(db: Db, s: Supplier): SupplierResult {
+  const inst = computeInstallation(s, db.settings, makeResolver(db, 0, new Set([s.id])));
+  const flags = runFlags(s, inst);
+  return { inst, flags, score: scorecard(s, inst, flags) };
 }

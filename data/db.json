@@ -1,0 +1,1446 @@
+{
+  "version": 1,
+  "settings": {
+    "exporterName": "Demo Exports Pvt Ltd",
+    "reportingYear": 2026,
+    "etsPriceEur": 75,
+    "eurInr": 100,
+    "gridEf": 0.727,
+    "originCarbonPriceEur": 0,
+    "defaultOverrides": {}
+  },
+  "suppliers": [
+    {
+      "id": "4406c88c",
+      "name": "Shakti Wire Rod Mills Pvt Ltd",
+      "city": "Mandi Gobindgarh",
+      "state": "Punjab",
+      "contactName": "R. Garg",
+      "phone": "+919800000001",
+      "language": "pa",
+      "status": "submitted",
+      "createdAt": "2026-11-04T14:39:26.291Z",
+      "submittedAt": "2026-10-12T10:00:00.000Z",
+      "portalToken": "f7zzl4uPRsM4zqCTszqMGY15",
+      "verifierToken": "KUsnF_fQjAptmaNh35cYFkLE",
+      "passportToken": "HMW4xua77EUpZqNuulnvBzv2",
+      "products": [
+        {
+          "id": "ed60ec32",
+          "name": "Wire rod",
+          "cnCode": "7213 91 10",
+          "route": "steel_induction",
+          "euTonnesPerYear": 3000,
+          "precursors": [
+            {
+              "id": "d2e407f1",
+              "name": "Steel scrap",
+              "cnCode": "7204",
+              "seeDirect": 0,
+              "seeIndirect": 0,
+              "source": "actual"
+            },
+            {
+              "id": "31bd5a2d",
+              "name": "Sponge iron",
+              "cnCode": "7203 10 00",
+              "seeDirect": 2.9,
+              "seeIndirect": 0.2,
+              "source": "default"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "fileName": "elec-2026-07.txt",
+          "mimeType": "text/plain",
+          "sha256": "5c3fe8f234c184d736a233ea265a1efadc2080e276f0f8503d16c5c4b14ea1f4",
+          "size": 315,
+          "uploadedAt": "2026-11-04T14:39:26.295Z",
+          "uploadedBy": "supplier",
+          "id": "2081118a",
+          "data": {
+            "docType": "electricity_bill",
+            "issuer": "Punjab State Power Corporation Ltd",
+            "accountRef": "LS-4471-0921",
+            "periodStart": "2026-07-01",
+            "periodEnd": "2026-07-31",
+            "lines": [
+              {
+                "kind": "electricity",
+                "fuel": null,
+                "material": null,
+                "quantity": 1228400,
+                "unit": "kWh",
+                "sourceQuote": "units consumed (kwh): 1,228,400 kWh"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "elec-2026-08.txt",
+          "mimeType": "text/plain",
+          "sha256": "8fe35ee9d7660962c641ae09245e2f02b28301a067002698a58d2d06e2d804cf",
+          "size": 315,
+          "uploadedAt": "2026-11-04T14:39:26.296Z",
+          "uploadedBy": "supplier",
+          "id": "094ee806",
+          "data": {
+            "docType": "electricity_bill",
+            "issuer": "Punjab State Power Corporation Ltd",
+            "accountRef": "LS-4471-0921",
+            "periodStart": "2026-08-01",
+            "periodEnd": "2026-08-31",
+            "lines": [
+              {
+                "kind": "electricity",
+                "fuel": null,
+                "material": null,
+                "quantity": 1241900,
+                "unit": "kWh",
+                "sourceQuote": "units consumed (kwh): 1,241,900 kWh"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "elec-2026-09.txt",
+          "mimeType": "text/plain",
+          "sha256": "fcfeaeb2580e09a3bf96e492397bbc87e645ef9dffeb717d92b3b062d4e71ed0",
+          "size": 315,
+          "uploadedAt": "2026-11-04T14:39:26.296Z",
+          "uploadedBy": "supplier",
+          "id": "e291f8ce",
+          "data": {
+            "docType": "electricity_bill",
+            "issuer": "Punjab State Power Corporation Ltd",
+            "accountRef": "LS-4471-0921",
+            "periodStart": "2026-09-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "electricity",
+                "fuel": null,
+                "material": null,
+                "quantity": 1219700,
+                "unit": "kWh",
+                "sourceQuote": "units consumed (kwh): 1,219,700 kWh"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "fuel-fo-q3.txt",
+          "mimeType": "text/plain",
+          "sha256": "20db91393f3d84e2d47de864422444febcc6ae43730579c420e6c39e11334817",
+          "size": 230,
+          "uploadedAt": "2026-11-04T14:39:26.297Z",
+          "uploadedBy": "supplier",
+          "id": "4af7c7a8",
+          "data": {
+            "docType": "fuel_invoice",
+            "issuer": "Gobind Fuels (IOCL bulk dealer)",
+            "accountRef": "GF/26-27/0712",
+            "periodStart": "2026-07-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "fuel",
+                "fuel": "furnace_oil",
+                "material": null,
+                "quantity": 110400,
+                "unit": "L",
+                "sourceQuote": "Fuel: Furnace Oil (FO 180) | 110,400 L"
+              },
+              {
+                "kind": "fuel",
+                "fuel": "diesel",
+                "material": null,
+                "quantity": 6200,
+                "unit": "L",
+                "sourceQuote": "Fuel: HSD for loaders | 6,200 L"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "production-q3.txt",
+          "mimeType": "text/plain",
+          "sha256": "75faad97b51f852e0986d9687d262bef1d7864fd8fba3038f76d45bac4908388",
+          "size": 238,
+          "uploadedAt": "2026-11-04T14:39:26.297Z",
+          "uploadedBy": "supplier",
+          "id": "a4759d3f",
+          "data": {
+            "docType": "weighbridge_slip",
+            "issuer": "Shakti Wire Rod Mills Pvt Ltd",
+            "accountRef": "PR/2026/Q3",
+            "periodStart": "2026-07-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "production",
+                "fuel": null,
+                "material": "Wire rod 5.5-12 mm SAE1008/1018",
+                "quantity": 4512.4,
+                "unit": "t",
+                "sourceQuote": "Output: Wire rod 5.5-12 mm SAE1008/1018 | 4,512.4 MT"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "purchases-q3.txt",
+          "mimeType": "text/plain",
+          "sha256": "5fbb0c3b653a4de284c0f314ec23b90e14864bebb09b9c16c11b801573358c77",
+          "size": 224,
+          "uploadedAt": "2026-11-04T14:39:26.298Z",
+          "uploadedBy": "supplier",
+          "id": "51015ba6",
+          "data": {
+            "docType": "purchase_invoice",
+            "issuer": "Shakti Wire Rod Mills Pvt Ltd",
+            "accountRef": "PUR/Q3/2026",
+            "periodStart": "2026-07-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "precursor",
+                "fuel": null,
+                "material": "Steel scrap HMS 1&2",
+                "quantity": 3310,
+                "unit": "t",
+                "sourceQuote": "Material: Steel scrap HMS 1&2 | 3,310 MT"
+              },
+              {
+                "kind": "precursor",
+                "fuel": null,
+                "material": "Sponge iron (coal DRI)",
+                "quantity": 1705,
+                "unit": "t",
+                "sourceQuote": "Material: Sponge iron (coal DRI) | 1,705 MT"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        }
+      ],
+      "activity": [
+        {
+          "id": "5b384ae1",
+          "kind": "electricity",
+          "fuel": null,
+          "material": null,
+          "productId": null,
+          "quantity": 1228400,
+          "unit": "kWh",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-07-31",
+          "evidenceId": "2081118a",
+          "sourceQuote": "units consumed (kwh): 1,228,400 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": true
+        },
+        {
+          "id": "87497119",
+          "kind": "electricity",
+          "fuel": null,
+          "material": null,
+          "productId": null,
+          "quantity": 1241900,
+          "unit": "kWh",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-08-31",
+          "evidenceId": "094ee806",
+          "sourceQuote": "units consumed (kwh): 1,241,900 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": true
+        },
+        {
+          "id": "89785595",
+          "kind": "electricity",
+          "fuel": null,
+          "material": null,
+          "productId": null,
+          "quantity": 1219700,
+          "unit": "kWh",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "e291f8ce",
+          "sourceQuote": "units consumed (kwh): 1,219,700 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": true
+        },
+        {
+          "id": "631d0dea",
+          "kind": "fuel",
+          "fuel": "furnace_oil",
+          "material": null,
+          "productId": null,
+          "quantity": 110400,
+          "unit": "L",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "4af7c7a8",
+          "sourceQuote": "Fuel: Furnace Oil (FO 180) | 110,400 L",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": true
+        },
+        {
+          "id": "a78059f8",
+          "kind": "fuel",
+          "fuel": "diesel",
+          "material": null,
+          "productId": null,
+          "quantity": 6200,
+          "unit": "L",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "4af7c7a8",
+          "sourceQuote": "Fuel: HSD for loaders | 6,200 L",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": true
+        },
+        {
+          "id": "058e97b4",
+          "kind": "production",
+          "fuel": null,
+          "material": "Wire rod 5.5-12 mm SAE1008/1018",
+          "productId": "ed60ec32",
+          "quantity": 4512.4,
+          "unit": "t",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "a4759d3f",
+          "sourceQuote": "Output: Wire rod 5.5-12 mm SAE1008/1018 | 4,512.4 MT",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": true
+        },
+        {
+          "id": "900b0771",
+          "kind": "precursor",
+          "fuel": null,
+          "material": "Steel scrap HMS 1&2",
+          "productId": "ed60ec32",
+          "quantity": 3310,
+          "unit": "t",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "51015ba6",
+          "sourceQuote": "Material: Steel scrap HMS 1&2 | 3,310 MT",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": true
+        },
+        {
+          "id": "405ad21c",
+          "kind": "precursor",
+          "fuel": null,
+          "material": "Sponge iron (coal DRI)",
+          "productId": "ed60ec32",
+          "quantity": 1705,
+          "unit": "t",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "51015ba6",
+          "sourceQuote": "Material: Sponge iron (coal DRI) | 1,705 MT",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": true
+        }
+      ],
+      "comments": [],
+      "verification": null,
+      "sharedWith": [
+        "Demo Exports Pvt Ltd",
+        "Ludhiana Precision Fasteners"
+      ]
+    },
+    {
+      "id": "4a324279",
+      "name": "Ludhiana Precision Fasteners",
+      "city": "Ludhiana",
+      "state": "Punjab",
+      "contactName": "Harpreet Singh",
+      "phone": "+919800000002",
+      "language": "hi",
+      "status": "submitted",
+      "createdAt": "2026-11-04T14:39:26.292Z",
+      "submittedAt": "2026-10-20T09:30:00.000Z",
+      "portalToken": "vKjjI-opxorxJn5nJWwk2bIr",
+      "verifierToken": "FcZsBX7NKkzq-2tzU-_logmH",
+      "passportToken": "ITraHs2HrGDMtXTg0zMpPXAM",
+      "products": [
+        {
+          "id": "2caf67a5",
+          "name": "Hex bolts",
+          "cnCode": "7318 15 88",
+          "route": "steel_fasteners",
+          "euTonnesPerYear": 1800,
+          "precursors": [
+            {
+              "id": "59b22c8b",
+              "name": "Wire rod",
+              "cnCode": "7213 91 10",
+              "seeDirect": 3.1,
+              "seeIndirect": 0.45,
+              "source": "passport",
+              "linkedSupplierId": "4406c88c",
+              "linkedProductId": "ed60ec32"
+            }
+          ]
+        },
+        {
+          "id": "5e6e6793",
+          "name": "Hex nuts",
+          "cnCode": "7318 16 91",
+          "route": "steel_fasteners",
+          "euTonnesPerYear": 600,
+          "precursors": [
+            {
+              "id": "236530e9",
+              "name": "Wire rod",
+              "cnCode": "7213 91 10",
+              "seeDirect": 3.1,
+              "seeIndirect": 0.45,
+              "source": "passport",
+              "linkedSupplierId": "4406c88c",
+              "linkedProductId": "ed60ec32"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "fileName": "elec-2026-07-rescan.txt",
+          "mimeType": "text/plain",
+          "sha256": "5760b10192c9d5f8f58022550a5ccd676ecc88ff756b502dbb7a69bf470db96c",
+          "size": 252,
+          "uploadedAt": "2026-11-04T14:39:26.300Z",
+          "uploadedBy": "supplier",
+          "id": "0e80341e",
+          "data": {
+            "docType": "electricity_bill",
+            "issuer": "Punjab State Power Corporation Ltd",
+            "accountRef": "MS-2208-1174",
+            "periodStart": "2026-07-01",
+            "periodEnd": "2026-07-31",
+            "lines": [
+              {
+                "kind": "electricity",
+                "fuel": null,
+                "material": null,
+                "quantity": 141250,
+                "unit": "kWh",
+                "sourceQuote": "units consumed (kwh): 141,250 kWh"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "elec-2026-07.txt",
+          "mimeType": "text/plain",
+          "sha256": "5760b10192c9d5f8f58022550a5ccd676ecc88ff756b502dbb7a69bf470db96c",
+          "size": 252,
+          "uploadedAt": "2026-11-04T14:39:26.300Z",
+          "uploadedBy": "supplier",
+          "id": "042db072",
+          "data": {
+            "docType": "electricity_bill",
+            "issuer": "Punjab State Power Corporation Ltd",
+            "accountRef": "MS-2208-1174",
+            "periodStart": "2026-07-01",
+            "periodEnd": "2026-07-31",
+            "lines": [
+              {
+                "kind": "electricity",
+                "fuel": null,
+                "material": null,
+                "quantity": 141250,
+                "unit": "kWh",
+                "sourceQuote": "units consumed (kwh): 141,250 kWh"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "elec-2026-09.txt",
+          "mimeType": "text/plain",
+          "sha256": "1a3043d30c317569957c44f8efc06c69c79b8973ea1c688e185f5915659559f9",
+          "size": 252,
+          "uploadedAt": "2026-11-04T14:39:26.300Z",
+          "uploadedBy": "supplier",
+          "id": "2c0579d3",
+          "data": {
+            "docType": "electricity_bill",
+            "issuer": "Punjab State Power Corporation Ltd",
+            "accountRef": "MS-2208-1174",
+            "periodStart": "2026-09-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "electricity",
+                "fuel": null,
+                "material": null,
+                "quantity": 139880,
+                "unit": "kWh",
+                "sourceQuote": "units consumed (kwh): 139,880 kWh"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "fuel-q3.txt",
+          "mimeType": "text/plain",
+          "sha256": "2a66ea50248c4e744d05bb17960b60a230a34149290f9b66e1a644e5f2bb9a9f",
+          "size": 198,
+          "uploadedAt": "2026-11-04T14:39:26.301Z",
+          "uploadedBy": "supplier",
+          "id": "dc9e9360",
+          "data": {
+            "docType": "fuel_invoice",
+            "issuer": "Super Gas Agency, Ludhiana",
+            "accountRef": "SGA/1187",
+            "periodStart": "2026-07-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "fuel",
+                "fuel": "lpg",
+                "material": null,
+                "quantity": 12150,
+                "unit": "kg",
+                "sourceQuote": "Fuel: LPG (heat treatment furnaces) | 12,150 kg"
+              },
+              {
+                "kind": "fuel",
+                "fuel": "diesel",
+                "material": null,
+                "quantity": 7400,
+                "unit": "L",
+                "sourceQuote": "Fuel: HSD (DG set) | 7,400 L"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "production-q3.txt",
+          "mimeType": "text/plain",
+          "sha256": "9c5a74452ae344d3a57417c21216b414de703fbdddda06b0331766e8218085d6",
+          "size": 276,
+          "uploadedAt": "2026-11-04T14:39:26.301Z",
+          "uploadedBy": "supplier",
+          "id": "7e4d41f5",
+          "data": {
+            "docType": "production_register",
+            "issuer": "Ludhiana Precision Fasteners",
+            "accountRef": "LPF/PR/Q3",
+            "periodStart": "2026-07-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "production",
+                "fuel": null,
+                "material": "Hex bolts M8-M20 grade 8.8",
+                "quantity": 662.5,
+                "unit": "t",
+                "sourceQuote": "Product: Hex bolts M8-M20 grade 8.8 | 662.5 MT"
+              },
+              {
+                "kind": "production",
+                "fuel": null,
+                "material": "Hex nuts M8-M20",
+                "quantity": 23,
+                "unit": "t",
+                "sourceQuote": "Product: Hex nuts M8-M20 | 23?.0 MT (illegible)"
+              }
+            ],
+            "lowConfidenceFields": [
+              "Hex nuts M8-M20"
+            ]
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "purchases-q3.txt",
+          "mimeType": "text/plain",
+          "sha256": "00d1fb91ec1d2036d439dfa83e8bae322da8099c00640554a78258090381a546",
+          "size": 270,
+          "uploadedAt": "2026-11-04T14:39:26.302Z",
+          "uploadedBy": "supplier",
+          "id": "bbf9b224",
+          "data": {
+            "docType": "purchase_invoice",
+            "issuer": "Shakti Wire Rod Mills Pvt Ltd",
+            "accountRef": "LPF/PUR/Q3",
+            "periodStart": "2026-07-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "precursor",
+                "fuel": null,
+                "material": "Wire rod SAE1018 for Hex bolts",
+                "quantity": 728,
+                "unit": "t",
+                "sourceQuote": "Input: Wire rod SAE1018 for Hex bolts | 728 MT"
+              },
+              {
+                "kind": "precursor",
+                "fuel": null,
+                "material": "Wire rod SAE1010 for Hex nuts",
+                "quantity": 262,
+                "unit": "t",
+                "sourceQuote": "Input: Wire rod SAE1010 for Hex nuts | 262 MT"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        }
+      ],
+      "activity": [
+        {
+          "id": "a9f22dfd",
+          "kind": "electricity",
+          "fuel": null,
+          "material": null,
+          "productId": null,
+          "quantity": 141250,
+          "unit": "kWh",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-07-31",
+          "evidenceId": "0e80341e",
+          "sourceQuote": "units consumed (kwh): 141,250 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "37123f39",
+          "kind": "electricity",
+          "fuel": null,
+          "material": null,
+          "productId": null,
+          "quantity": 141250,
+          "unit": "kWh",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-07-31",
+          "evidenceId": "042db072",
+          "sourceQuote": "units consumed (kwh): 141,250 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "eacd8f44",
+          "kind": "electricity",
+          "fuel": null,
+          "material": null,
+          "productId": null,
+          "quantity": 139880,
+          "unit": "kWh",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "2c0579d3",
+          "sourceQuote": "units consumed (kwh): 139,880 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "81b21d0f",
+          "kind": "fuel",
+          "fuel": "lpg",
+          "material": null,
+          "productId": null,
+          "quantity": 12150,
+          "unit": "kg",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "dc9e9360",
+          "sourceQuote": "Fuel: LPG (heat treatment furnaces) | 12,150 kg",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "bc9ea770",
+          "kind": "fuel",
+          "fuel": "diesel",
+          "material": null,
+          "productId": null,
+          "quantity": 7400,
+          "unit": "L",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "dc9e9360",
+          "sourceQuote": "Fuel: HSD (DG set) | 7,400 L",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "643c0732",
+          "kind": "production",
+          "fuel": null,
+          "material": "Hex bolts M8-M20 grade 8.8",
+          "productId": "2caf67a5",
+          "quantity": 662.5,
+          "unit": "t",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "7e4d41f5",
+          "sourceQuote": "Product: Hex bolts M8-M20 grade 8.8 | 662.5 MT",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "219bd57b",
+          "kind": "production",
+          "fuel": null,
+          "material": "Hex nuts M8-M20",
+          "productId": "5e6e6793",
+          "quantity": 23,
+          "unit": "t",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "7e4d41f5",
+          "sourceQuote": "Product: Hex nuts M8-M20 | 23?.0 MT (illegible)",
+          "origin": "offline",
+          "lowConfidence": true,
+          "confirmed": false
+        },
+        {
+          "id": "a7437649",
+          "kind": "precursor",
+          "fuel": null,
+          "material": "Wire rod SAE1018 for Hex bolts",
+          "productId": "2caf67a5",
+          "quantity": 728,
+          "unit": "t",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "bbf9b224",
+          "sourceQuote": "Input: Wire rod SAE1018 for Hex bolts | 728 MT",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "b898d443",
+          "kind": "precursor",
+          "fuel": null,
+          "material": "Wire rod SAE1010 for Hex nuts",
+          "productId": "5e6e6793",
+          "quantity": 262,
+          "unit": "t",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "bbf9b224",
+          "sourceQuote": "Input: Wire rod SAE1010 for Hex nuts | 262 MT",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        }
+      ],
+      "comments": [],
+      "verification": null,
+      "sharedWith": []
+    },
+    {
+      "id": "d2627a19",
+      "name": "Gujarat Alu Extrusions LLP",
+      "city": "Sanand",
+      "state": "Gujarat",
+      "contactName": "Mehul Patel",
+      "phone": "+919800000003",
+      "language": "gu",
+      "status": "collecting",
+      "createdAt": "2026-11-04T14:39:26.292Z",
+      "submittedAt": null,
+      "portalToken": "2wsACu6cQ1fBfBHf-mMyIVKm",
+      "verifierToken": "PFaPR4uzxOngGt3eyY7k1Qpz",
+      "passportToken": "peXbXQwptB75Rd0bSEu4ilxP",
+      "products": [
+        {
+          "id": "1e496642",
+          "name": "Aluminium window profiles",
+          "cnCode": "7604 29 10",
+          "route": "al_extrusion",
+          "euTonnesPerYear": 1200,
+          "precursors": [
+            {
+              "id": "8883e24c",
+              "name": "Aluminium billets",
+              "cnCode": "7601 20 20",
+              "seeDirect": 1.9,
+              "seeIndirect": 14,
+              "source": "default"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "fileName": "elec-colony-2026-08.txt",
+          "mimeType": "text/plain",
+          "sha256": "66241ccf80b1a67557fe90d142266ae89a5d950db5ae163b6c33dc29feeeb4c9",
+          "size": 247,
+          "uploadedAt": "2026-11-04T14:39:26.302Z",
+          "uploadedBy": "supplier",
+          "id": "f97112f1",
+          "data": {
+            "docType": "electricity_bill",
+            "issuer": "Uttar Gujarat Vij Company Ltd (UGVCL)",
+            "accountRef": "41207/LT/1922",
+            "periodStart": "2026-08-01",
+            "periodEnd": "2026-08-31",
+            "lines": [
+              {
+                "kind": "electricity",
+                "fuel": null,
+                "material": null,
+                "quantity": 118600,
+                "unit": "kWh",
+                "sourceQuote": "units consumed (kwh): 118,600 kWh"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "elec-colony-2026-09.txt",
+          "mimeType": "text/plain",
+          "sha256": "5ee2bf355a812dfb792760824a7a9c6ee5cf850e2eb4b0791ed8c8d20b2f871a",
+          "size": 247,
+          "uploadedAt": "2026-11-04T14:39:26.303Z",
+          "uploadedBy": "supplier",
+          "id": "61bd51bc",
+          "data": {
+            "docType": "electricity_bill",
+            "issuer": "Uttar Gujarat Vij Company Ltd (UGVCL)",
+            "accountRef": "41207/LT/1922",
+            "periodStart": "2026-09-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "electricity",
+                "fuel": null,
+                "material": null,
+                "quantity": 121300,
+                "unit": "kWh",
+                "sourceQuote": "units consumed (kwh): 121,300 kWh"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "elec-main-2026-08.txt",
+          "mimeType": "text/plain",
+          "sha256": "3200e5d6c7e35da7816b1078d447e1feb4fa2ba00d01bc5773aa482e39123c44",
+          "size": 276,
+          "uploadedAt": "2026-11-04T14:39:26.303Z",
+          "uploadedBy": "supplier",
+          "id": "f393c558",
+          "data": {
+            "docType": "electricity_bill",
+            "issuer": "Uttar Gujarat Vij Company Ltd (UGVCL)",
+            "accountRef": "41207/HT/0388",
+            "periodStart": "2026-08-01",
+            "periodEnd": "2026-08-31",
+            "lines": [
+              {
+                "kind": "electricity",
+                "fuel": null,
+                "material": null,
+                "quantity": 131400,
+                "unit": "kWh",
+                "sourceQuote": "units consumed (kwh): 131,400 kWh"
+              },
+              {
+                "kind": "renewable_electricity",
+                "fuel": null,
+                "material": "Rooftop solar",
+                "quantity": 15200,
+                "unit": "kWh",
+                "sourceQuote": "solar units (kwh): 15,200 kWh"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "elec-main-2026-09.txt",
+          "mimeType": "text/plain",
+          "sha256": "bd8a68960218545f1cb0731b52c41486e2ab6e8e4199aa4c1e36ba2c0aea2b9b",
+          "size": 276,
+          "uploadedAt": "2026-11-04T14:39:26.303Z",
+          "uploadedBy": "supplier",
+          "id": "9a9850a0",
+          "data": {
+            "docType": "electricity_bill",
+            "issuer": "Uttar Gujarat Vij Company Ltd (UGVCL)",
+            "accountRef": "41207/HT/0388",
+            "periodStart": "2026-09-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "electricity",
+                "fuel": null,
+                "material": null,
+                "quantity": 128900,
+                "unit": "kWh",
+                "sourceQuote": "units consumed (kwh): 128,900 kWh"
+              },
+              {
+                "kind": "renewable_electricity",
+                "fuel": null,
+                "material": "Rooftop solar",
+                "quantity": 15200,
+                "unit": "kWh",
+                "sourceQuote": "solar units (kwh): 15,200 kWh"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "png-q3.txt",
+          "mimeType": "text/plain",
+          "sha256": "893c5cbc77f6ceb613710794c0d03bd237aa7466a03ea5f9d5dd4faf143f5a37",
+          "size": 163,
+          "uploadedAt": "2026-11-04T14:39:26.303Z",
+          "uploadedBy": "supplier",
+          "id": "f0deaa1f",
+          "data": {
+            "docType": "fuel_invoice",
+            "issuer": "Sabarmati Gas Ltd",
+            "accountRef": "SGL/IND/88213",
+            "periodStart": "2026-08-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "fuel",
+                "fuel": "natural_gas",
+                "material": null,
+                "quantity": 20150,
+                "unit": "SCM",
+                "sourceQuote": "Fuel: PNG (billet heater) | 20,150 SCM"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "production-aug-sep.txt",
+          "mimeType": "text/plain",
+          "sha256": "0ce8c5313e0b618f49fecb8122663d7321733aa43f1a9f61a2eb0f7505bd2e84",
+          "size": 192,
+          "uploadedAt": "2026-11-04T14:39:26.304Z",
+          "uploadedBy": "supplier",
+          "id": "eddbe8da",
+          "data": {
+            "docType": "production_register",
+            "issuer": "Gujarat Alu Extrusions LLP",
+            "accountRef": "GAE/PR/AUG-SEP",
+            "periodStart": "2026-08-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "production",
+                "fuel": null,
+                "material": "Aluminium window profiles 6063-T5",
+                "quantity": 361.8,
+                "unit": "t",
+                "sourceQuote": "Output: Aluminium window profiles 6063-T5 | 361.8 MT"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        },
+        {
+          "fileName": "weighbridge-billets.txt",
+          "mimeType": "text/plain",
+          "sha256": "ab5a518f81666640465937ed789ed23e5cf617148ed8dada2bdc96bbea30b1b4",
+          "size": 253,
+          "uploadedAt": "2026-11-04T14:39:26.304Z",
+          "uploadedBy": "supplier",
+          "id": "a3420570",
+          "data": {
+            "docType": "weighbridge_slip",
+            "issuer": "Sanand Dharam Kanta",
+            "accountRef": "SDK/IN/2026/0811-0930",
+            "periodStart": "2026-08-01",
+            "periodEnd": "2026-09-30",
+            "lines": [
+              {
+                "kind": "precursor",
+                "fuel": null,
+                "material": "Aluminium billets 6063 (purchased)",
+                "quantity": 400.4,
+                "unit": "t",
+                "sourceQuote": "Material: Aluminium billets 6063 (purchased) | 400.4 MT"
+              }
+            ],
+            "lowConfidenceFields": []
+          },
+          "extractedBy": "offline"
+        }
+      ],
+      "activity": [
+        {
+          "id": "91788fb4",
+          "kind": "electricity",
+          "fuel": null,
+          "material": null,
+          "productId": null,
+          "quantity": 118600,
+          "unit": "kWh",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-08-31",
+          "evidenceId": "f97112f1",
+          "sourceQuote": "units consumed (kwh): 118,600 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "512c0d27",
+          "kind": "electricity",
+          "fuel": null,
+          "material": null,
+          "productId": null,
+          "quantity": 121300,
+          "unit": "kWh",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "61bd51bc",
+          "sourceQuote": "units consumed (kwh): 121,300 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "56272ae8",
+          "kind": "electricity",
+          "fuel": null,
+          "material": null,
+          "productId": null,
+          "quantity": 131400,
+          "unit": "kWh",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-08-31",
+          "evidenceId": "f393c558",
+          "sourceQuote": "units consumed (kwh): 131,400 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "4c4c150b",
+          "kind": "renewable_electricity",
+          "fuel": null,
+          "material": "Rooftop solar",
+          "productId": null,
+          "quantity": 15200,
+          "unit": "kWh",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-08-31",
+          "evidenceId": "f393c558",
+          "sourceQuote": "solar units (kwh): 15,200 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "6141666e",
+          "kind": "electricity",
+          "fuel": null,
+          "material": null,
+          "productId": null,
+          "quantity": 128900,
+          "unit": "kWh",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "9a9850a0",
+          "sourceQuote": "units consumed (kwh): 128,900 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "4aad69c5",
+          "kind": "renewable_electricity",
+          "fuel": null,
+          "material": "Rooftop solar",
+          "productId": null,
+          "quantity": 15200,
+          "unit": "kWh",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "9a9850a0",
+          "sourceQuote": "solar units (kwh): 15,200 kWh",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "31574c30",
+          "kind": "fuel",
+          "fuel": "natural_gas",
+          "material": null,
+          "productId": null,
+          "quantity": 20150,
+          "unit": "SCM",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "f0deaa1f",
+          "sourceQuote": "Fuel: PNG (billet heater) | 20,150 SCM",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "0cf2ad26",
+          "kind": "production",
+          "fuel": null,
+          "material": "Aluminium window profiles 6063-T5",
+          "productId": "1e496642",
+          "quantity": 361.8,
+          "unit": "t",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "eddbe8da",
+          "sourceQuote": "Output: Aluminium window profiles 6063-T5 | 361.8 MT",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        },
+        {
+          "id": "a40e5d17",
+          "kind": "precursor",
+          "fuel": null,
+          "material": "Aluminium billets 6063 (purchased)",
+          "productId": "1e496642",
+          "quantity": 400.4,
+          "unit": "t",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-09-30",
+          "evidenceId": "a3420570",
+          "sourceQuote": "Material: Aluminium billets 6063 (purchased) | 400.4 MT",
+          "origin": "offline",
+          "lowConfidence": false,
+          "confirmed": false
+        }
+      ],
+      "comments": [],
+      "verification": null,
+      "sharedWith": []
+    },
+    {
+      "id": "c3090ec6",
+      "name": "Sri Balaji Cement Grinding Unit",
+      "city": "Hosur",
+      "state": "Tamil Nadu",
+      "contactName": "K. Murugan",
+      "phone": "+919800000004",
+      "language": "ta",
+      "status": "invited",
+      "createdAt": "2026-11-04T14:39:26.292Z",
+      "submittedAt": null,
+      "portalToken": "T5--ZuQctKibI7ZoXMvad16B",
+      "verifierToken": "VP4DhvDP4VO9tDeqtzEryZyz",
+      "passportToken": "XE6gNe6wc0c8Oi6preqTBMMP",
+      "products": [
+        {
+          "id": "3548b99a",
+          "name": "Portland slag cement",
+          "cnCode": "2523 29 00",
+          "route": "cement_grinding",
+          "euTonnesPerYear": 5000,
+          "precursors": [
+            {
+              "id": "3d50dd90",
+              "name": "Clinker",
+              "cnCode": "2523 10 00",
+              "seeDirect": 0.9,
+              "seeIndirect": 0.05,
+              "source": "default"
+            }
+          ]
+        }
+      ],
+      "evidence": [],
+      "activity": [],
+      "comments": [],
+      "verification": null,
+      "sharedWith": []
+    }
+  ],
+  "audit": [
+    {
+      "seq": 1,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "system",
+      "action": "supplier_created",
+      "detail": "Shakti Wire Rod Mills Pvt Ltd (demo)",
+      "supplierId": "4406c88c",
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "0a2ed281bac5b0fa65e7a2f8c409c771746167c6d09777a45e0ff944600d7c7f"
+    },
+    {
+      "seq": 2,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "system",
+      "action": "supplier_created",
+      "detail": "Ludhiana Precision Fasteners (demo)",
+      "supplierId": "4a324279",
+      "prevHash": "0a2ed281bac5b0fa65e7a2f8c409c771746167c6d09777a45e0ff944600d7c7f",
+      "hash": "d5f9f2152302422c57f36182ff696eb5f11524049c3d23901bff9f9cd841adcd"
+    },
+    {
+      "seq": 3,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "system",
+      "action": "supplier_created",
+      "detail": "Gujarat Alu Extrusions LLP (demo)",
+      "supplierId": "d2627a19",
+      "prevHash": "d5f9f2152302422c57f36182ff696eb5f11524049c3d23901bff9f9cd841adcd",
+      "hash": "21e42dd1fc21fde340718a31b83e47f47041da38648944fd797c1113173d4b45"
+    },
+    {
+      "seq": 4,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "system",
+      "action": "supplier_created",
+      "detail": "Sri Balaji Cement Grinding Unit (demo)",
+      "supplierId": "c3090ec6",
+      "prevHash": "21e42dd1fc21fde340718a31b83e47f47041da38648944fd797c1113173d4b45",
+      "hash": "df477c344097b8f4a34b726f7d9acd49d8bd90d4620e0899d090c83193d447b6"
+    },
+    {
+      "seq": 5,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "elec-2026-07.txt sha256=5c3fe8f234c184d7…",
+      "supplierId": "4406c88c",
+      "prevHash": "df477c344097b8f4a34b726f7d9acd49d8bd90d4620e0899d090c83193d447b6",
+      "hash": "c7473ea2cc9a005531e12eb149ef3df452c04c36d349af89b8947cca1becc0cb"
+    },
+    {
+      "seq": 6,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "elec-2026-08.txt sha256=8fe35ee9d7660962…",
+      "supplierId": "4406c88c",
+      "prevHash": "c7473ea2cc9a005531e12eb149ef3df452c04c36d349af89b8947cca1becc0cb",
+      "hash": "95b1f1e8687c09a9bb636f7dbb12e90594c77e8c0075cd2a0cc462fbda58cb49"
+    },
+    {
+      "seq": 7,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "elec-2026-09.txt sha256=fcfeaeb2580e09a3…",
+      "supplierId": "4406c88c",
+      "prevHash": "95b1f1e8687c09a9bb636f7dbb12e90594c77e8c0075cd2a0cc462fbda58cb49",
+      "hash": "4978a4af21cde1503f83b762897aec42f4d021f705a7a4f0419f1531ce775cfe"
+    },
+    {
+      "seq": 8,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "fuel-fo-q3.txt sha256=20db91393f3d84e2…",
+      "supplierId": "4406c88c",
+      "prevHash": "4978a4af21cde1503f83b762897aec42f4d021f705a7a4f0419f1531ce775cfe",
+      "hash": "547e0c0e3a2d520a99c7a4d273948864efba1f69a94e52d45fb2a34394fe4ae1"
+    },
+    {
+      "seq": 9,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "production-q3.txt sha256=75faad97b51f852e…",
+      "supplierId": "4406c88c",
+      "prevHash": "547e0c0e3a2d520a99c7a4d273948864efba1f69a94e52d45fb2a34394fe4ae1",
+      "hash": "b3e3ce2d53cb870ad34391b90ea19d9732f9e58ca26db8a6ce4e0a6312bb7ef4"
+    },
+    {
+      "seq": 10,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "purchases-q3.txt sha256=5fbb0c3b653a4de2…",
+      "supplierId": "4406c88c",
+      "prevHash": "b3e3ce2d53cb870ad34391b90ea19d9732f9e58ca26db8a6ce4e0a6312bb7ef4",
+      "hash": "0f7118a9d43242e0c7e833788c87d8a9eb999c55e67a2cbdf2271a4f05ed8513"
+    },
+    {
+      "seq": 11,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "elec-2026-07-rescan.txt sha256=5760b10192c9d5f8…",
+      "supplierId": "4a324279",
+      "prevHash": "0f7118a9d43242e0c7e833788c87d8a9eb999c55e67a2cbdf2271a4f05ed8513",
+      "hash": "4f888fd003dfae40cbe6b35b455bc78f35fe2035acd150862cfe82b9fbbd50ca"
+    },
+    {
+      "seq": 12,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "elec-2026-07.txt sha256=5760b10192c9d5f8…",
+      "supplierId": "4a324279",
+      "prevHash": "4f888fd003dfae40cbe6b35b455bc78f35fe2035acd150862cfe82b9fbbd50ca",
+      "hash": "8704c4223dc13326717bc56b07362b113776bf9741759ad9bfa957cca651d55b"
+    },
+    {
+      "seq": 13,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "elec-2026-09.txt sha256=1a3043d30c317569…",
+      "supplierId": "4a324279",
+      "prevHash": "8704c4223dc13326717bc56b07362b113776bf9741759ad9bfa957cca651d55b",
+      "hash": "f325792fbc4e7085fa19eeafc5e2076f6a491318059fefae2bf0576ffd8454e2"
+    },
+    {
+      "seq": 14,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "fuel-q3.txt sha256=2a66ea50248c4e74…",
+      "supplierId": "4a324279",
+      "prevHash": "f325792fbc4e7085fa19eeafc5e2076f6a491318059fefae2bf0576ffd8454e2",
+      "hash": "71476fc6b4cdfc44d2fe05489f1a05ea1cd87a5804f5f864f784d0971c5eb940"
+    },
+    {
+      "seq": 15,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "production-q3.txt sha256=9c5a74452ae344d3…",
+      "supplierId": "4a324279",
+      "prevHash": "71476fc6b4cdfc44d2fe05489f1a05ea1cd87a5804f5f864f784d0971c5eb940",
+      "hash": "0aa5858f9b1bbe21d68a27e7f3db39d3994a4416a7d91d816ca769a0e1101ea7"
+    },
+    {
+      "seq": 16,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "purchases-q3.txt sha256=00d1fb91ec1d2036…",
+      "supplierId": "4a324279",
+      "prevHash": "0aa5858f9b1bbe21d68a27e7f3db39d3994a4416a7d91d816ca769a0e1101ea7",
+      "hash": "ede1c58b01e4332f835330ab7cf8309a3ffffa8eebc4e5bfc272d28571f78445"
+    },
+    {
+      "seq": 17,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "elec-colony-2026-08.txt sha256=66241ccf80b1a675…",
+      "supplierId": "d2627a19",
+      "prevHash": "ede1c58b01e4332f835330ab7cf8309a3ffffa8eebc4e5bfc272d28571f78445",
+      "hash": "322ac160bde7d1e2b1b439356d3cedf4822d99bab1a63c697edd63c86835e7d1"
+    },
+    {
+      "seq": 18,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "elec-colony-2026-09.txt sha256=5ee2bf355a812dfb…",
+      "supplierId": "d2627a19",
+      "prevHash": "322ac160bde7d1e2b1b439356d3cedf4822d99bab1a63c697edd63c86835e7d1",
+      "hash": "a88f86ec24f5b701ce77011f2d46a826e6886fc711c00cbb7590ee9be98cfed3"
+    },
+    {
+      "seq": 19,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "elec-main-2026-08.txt sha256=3200e5d6c7e35da7…",
+      "supplierId": "d2627a19",
+      "prevHash": "a88f86ec24f5b701ce77011f2d46a826e6886fc711c00cbb7590ee9be98cfed3",
+      "hash": "fad88a62f64343012592f14901f60593ce2c56099b1cfaba628769285a81b2a9"
+    },
+    {
+      "seq": 20,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "elec-main-2026-09.txt sha256=bd8a68960218545f…",
+      "supplierId": "d2627a19",
+      "prevHash": "fad88a62f64343012592f14901f60593ce2c56099b1cfaba628769285a81b2a9",
+      "hash": "a38fb932eec6af85521802f83a47e97ae9b2018967f89de5f424cad7b73c8340"
+    },
+    {
+      "seq": 21,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "png-q3.txt sha256=893c5cbc77f6ceb6…",
+      "supplierId": "d2627a19",
+      "prevHash": "a38fb932eec6af85521802f83a47e97ae9b2018967f89de5f424cad7b73c8340",
+      "hash": "199f4ad4fed5900208b1b18a3cbd173be9f3fddd3576f7512f9df922a6a4a453"
+    },
+    {
+      "seq": 22,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "production-aug-sep.txt sha256=0ce8c5313e0b618f…",
+      "supplierId": "d2627a19",
+      "prevHash": "199f4ad4fed5900208b1b18a3cbd173be9f3fddd3576f7512f9df922a6a4a453",
+      "hash": "29cad375432ff85155d3f027618a476cb896d123866aeaee68ffc39d97cb1ab6"
+    },
+    {
+      "seq": 23,
+      "at": "2026-11-04T14:39:26.304Z",
+      "actor": "supplier",
+      "action": "evidence_uploaded",
+      "detail": "weighbridge-billets.txt sha256=ab5a518f81666640…",
+      "supplierId": "d2627a19",
+      "prevHash": "29cad375432ff85155d3f027618a476cb896d123866aeaee68ffc39d97cb1ab6",
+      "hash": "d97d4bc2bddfd61d03e49d62f79b815f4a45e3d1bbe7b3e6c45ffa5b7fdbac83"
+    }
+  ]
+}

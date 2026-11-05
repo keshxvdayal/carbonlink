@@ -7,22 +7,25 @@
 
 :root {
   color-scheme: light;
+  /* chart roles (validated reference palette, light surface) */
+  --series-actual: #2a78d6;
+  --series-default: #eb6834;
 }
 
 body {
-  background: #f5f6f8;
+  background: #f4f6f5;
   color: #0f172a;
 }
 
-::selection {
-  background: #99f6e4;
-}
+::selection { background: #bbf7d0; }
 
 @keyframes rise {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: none; }
 }
 .rise { animation: rise 0.35s ease-out both; }
+
+.num { font-variant-numeric: tabular-nums; }
 
 @media print {
   body { background: #fff; }

@@ -1,9 +1,8 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
-import { z } from "zod";
 import { ExtractedDocSchema, type ExtractedDoc } from "@/lib/types";
 
-export const MODEL = process.env.TRADECHECK_MODEL ?? "claude-opus-5-5";
+export const MODEL = process.env.CARBONLINK_MODEL ?? "claude-opus-5-5";
 
 let client: Anthropic | null = null;
 function getClient(): Anthropic {
@@ -23,16 +22,21 @@ const FALLBACK: { betas: Anthropic.Beta.AnthropicBeta[]; fallbacks: "default" } 
   fallbacks: "default",
 };
 
-const EXTRACTION_SYSTEM = `You extract data from international trade documents (commercial invoices, packing lists, bills of lading, certificates of origin, Indian shipping bills, letters of credit) for a pre-filing compliance check.
+const SYSTEM = `You read source documents from small Indian manufacturers (steel, aluminium, cement units) so their greenhouse-gas emissions can be calculated for the EU Carbon Border Adjustment Mechanism (CBAM). A verifier will later compare every number you return against the original document.
+
+Documents you will see: DISCOM electricity bills (MSEDCL, PSPCL, DGVCL, TANGEDCO, etc.), fuel invoices (HSD/diesel, furnace oil, LSHS, PNG, LPG, coal, pet coke), weighbridge slips, handwritten or printed production registers, and purchase invoices for billets, wire rod, ingots or clinker.
 
 Rules:
-- Copy values exactly as printed. Do not correct, infer or "fix" anything: discrepancies between documents are what the downstream checker is looking for, so a silently corrected value hides a real error.
-- Use null for any field not present on this document. Never fill a field from general knowledge.
-- Convert dates to YYYY-MM-DD. Convert weights to kilograms. Numbers without thousands separators.
-- documentNumber is this document's own number. invoiceNumberRef is the commercial invoice number the document refers to (for an invoice, its own number).
-- For a letter of credit: exporter = beneficiary, consignee = applicant, totalValue = credit amount.
-- HS codes: digits only, as printed.
-- List in lowConfidenceFields every field you could not read clearly (blurred, handwritten, cut off, ambiguous) or had to choose between conflicting values on the same page.`;
+- Copy quantities exactly as printed. Never correct, round, estimate or fill from general knowledge. If a value is missing, leave it out.
+- Electricity: report the energy consumed in kWh for the billing period (units consumed / net kWh). Never report kVAh, kVA demand or rupee amounts as kWh. If both kWh and kVAh are printed, use kWh and mention kVAh in lowConfidenceFields only if kWh is absent.
+- A bill that shows rooftop solar / open-access green energy separately: report grid kWh as electricity and the renewable kWh as renewable_electricity.
+- Fuel: one line per fuel. HSD/diesel → diesel; FO/LSHS/LDO → furnace_oil; PNG/CNG/natural gas → natural_gas.
+- Weighbridge slips and production registers: the NET weight of finished product is production; weight of purchased input material (billets, wire rod, ingots, scrap, clinker) is precursor.
+- Purchase invoices for billets/wire rod/ingots/clinker: precursor lines.
+- Graphite electrodes or carbon raisers: process_input.
+- Dates as YYYY-MM-DD. For a monthly register or bill use the first and last day it covers.
+- sourceQuote: the exact snippet the number came from, so a reviewer can find it.
+- Put any value that is blurred, handwritten and unclear, cut off, overwritten or ambiguous in lowConfidenceFields (name the line by its material or kind).`;
 
 export type UploadedFile = { name: string; mimeType: string; data: Buffer };
 
@@ -57,48 +61,16 @@ export async function extractWithClaude(file: UploadedFile): Promise<ExtractedDo
     max_tokens: 16000,
     ...FALLBACK,
     output_config: { effort: "medium", format: betaZodOutputFormat(ExtractedDocSchema) },
-    system: EXTRACTION_SYSTEM,
+    system: SYSTEM,
     messages: [
       {
         role: "user",
-        content: [contentFor(file), { type: "text", text: `Extract the fields from "${file.name}".` }],
+        content: [contentFor(file), { type: "text", text: `Extract the activity data from "${file.name}".` }],
       },
     ],
   });
   if (response.stop_reason === "refusal") throw new ExtractionError(`The model declined to process ${file.name}.`);
-  if (response.stop_reason === "max_tokens") throw new ExtractionError(`${file.name} is too long to extract in one pass.`);
-  if (!response.parsed_output) throw new ExtractionError(`Could not parse extraction output for ${file.name}.`);
+  if (response.stop_reason === "max_tokens") throw new ExtractionError(`${file.name} is too long to extract in one pass. Split it into separate pages.`);
+  if (!response.parsed_output) throw new ExtractionError(`Could not read ${file.name}.`);
   return response.parsed_output;
-}
-
-const HsBatchSchema = z.object({
-  items: z.array(
-    z.object({
-      index: z.number().int(),
-      suggestedHs: z.string().describe("Most likely HS code, 6 to 8 digits, digits only"),
-      suggestedDescription: z.string().describe("Official heading/subheading description"),
-      confidence: z.enum(["high", "medium", "low"]),
-      rationale: z.string().describe("One or two sentences citing the classification rule or material/construction that decides it"),
-    }),
-  ),
-});
-
-export type AiHsSuggestion = z.infer<typeof HsBatchSchema>["items"][number];
-
-export async function classifyHsWithClaude(
-  items: { description: string; declared: string | null }[],
-): Promise<AiHsSuggestion[]> {
-  if (items.length === 0) return [];
-  const list = items.map((it, i) => `${i}. "${it.description}" (declared HS: ${it.declared ?? "none"})`).join("\n");
-  const response = await getClient().beta.messages.parse({
-    model: MODEL,
-    max_tokens: 16000,
-    ...FALLBACK,
-    output_config: { effort: "high", format: betaZodOutputFormat(HsBatchSchema) },
-    system:
-      "You are a customs classification specialist for Indian exports. Classify each goods description under the Harmonized System using the General Rules of Interpretation. Give the 8-digit Indian ITC-HS code only when the description is specific enough to decide it; otherwise give the 6-digit subheading. Judge the description on its own merits: do not anchor on the declared code. Use low confidence when material, construction (knitted vs woven) or use is missing from the description.",
-    messages: [{ role: "user", content: `Classify these line items:\n${list}` }],
-  });
-  if (response.stop_reason === "refusal" || !response.parsed_output) return [];
-  return response.parsed_output.items;
 }

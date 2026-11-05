@@ -1,0 +1,7 @@
+TAX INVOICE - FUEL
+Vendor: Super Gas Agency, Ludhiana
+Invoice No: SGA/1187
+Period From: 01/07/2026
+Period To: 30/09/2026
+Fuel: LPG (heat treatment furnaces) | 12,150 kg
+Fuel: HSD (DG set) | 7,400 L

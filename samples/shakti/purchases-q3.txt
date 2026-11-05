@@ -1,0 +1,7 @@
+PURCHASE INVOICE SUMMARY (Q3)
+Company: Shakti Wire Rod Mills Pvt Ltd
+Invoice No: PUR/Q3/2026
+Period From: 01/07/2026
+Period To: 30/09/2026
+Material: Steel scrap HMS 1&2 | 3,310 MT
+Material: Sponge iron (coal DRI) | 1,705 MT

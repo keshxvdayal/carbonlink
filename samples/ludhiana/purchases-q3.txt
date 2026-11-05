@@ -1,0 +1,8 @@
+PURCHASE INVOICE SUMMARY (Q3)
+Company: Ludhiana Precision Fasteners
+Invoice No: LPF/PUR/Q3
+Supplier: Shakti Wire Rod Mills Pvt Ltd
+Period From: 01/07/2026
+Period To: 30/09/2026
+Input: Wire rod SAE1018 for Hex bolts | 728 MT
+Input: Wire rod SAE1010 for Hex nuts | 262 MT
